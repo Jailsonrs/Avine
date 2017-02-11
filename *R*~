@@ -1,0 +1,27 @@
+mento ausente, sem padrão
+> server <- function(input, output, session) {
++     output$table <- DT::renderDataTable(DT::datatable({
++         data <- dadosre
++         if (input$resp != "Todos") {
++             data <- dadosre[dadosre$Responsável.pelo.Indicador == input$resp,]
++         }
++         if (input$per != "Todos") {
++             data <- dadosre[dadosre$Periodo == input$per,]
++         }
+        if(input$per != "Todos" & input$resp != "Todos"){
++ +             data <- dadosre[dadosre$Periodo == input$per & dadosre$Responsável.pelo.Indicador == input$resp,]   
++         }
++         data
++     }))
++ }
+> shinyApp(ui,server) 
+                                        #  conn <- dbConnect(
+                                        #     drv = RMySQL::MySQL(),
+                                        #    dbname = "world",
+                                        #       host = "127.0.0.1",
+                                        #       username = "jrs",
+                                        #      password = "a7v8x")
+
+Listening on http://127.0.0.1:3945
+  C-c C-c
+> 

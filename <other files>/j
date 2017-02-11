@@ -1,0 +1,17 @@
+server <- function(input, output, session) {
++     output$tab <-renderTable({
++            if(input$per == "todos"){
++                dadosre
++            }
++            else{
++                if(input$per == "todos" & input$resp != "0")
++                    subset(dadosre,  Periodo == input$per & Responsável.pelo.Indicador == input$resp)
++                else if(input$per != "todos" & input$resp != "0" )
++                    subset(dadosre, Responsável.pelo.Indicador == input$resp)
++            }
++     })  
++ }
+> rodar <- shinyApp(ui,server) 
+> rodar                                        #  conn <- dbConnect(
+
+Listening on http://127.0.0.1:7526
